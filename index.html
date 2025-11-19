@@ -3,12 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Linha do Tempo: Novo Centro Maringá</title>
+<title>Linha do Tempo: Evolução do Novo Centro</title>
 <style>
-  /* --- Estilos Gerais (Pode ajustar conforme a identidade visual do curso) --- */
-:root {
-    --primary-color: #2c3e50; /* Azul escuro (Textos e datas) */
-    --accent-color: #007bff;  /* <--- ALTERADO AQUI (De laranja para Azul Vibrante) */
+  /* --- Estilos Gerais --- */
+  :root {
+    --primary-color: #2c3e50; /* Azul escuro (Textos) */
+    --accent-color: #007bff;  /* Azul Vibrante (Destaques) */
     --bg-color: #f4f7f6;
     --text-color: #333;
     --card-bg: #ffffff;
@@ -24,9 +24,9 @@
   }
 
   .timeline-container {
-    max-width: 800px;
+    max-width: 900px;
     margin: 0 auto;
-    padding: 20px 0;
+    padding: 40px 0;
     position: relative;
   }
 
@@ -36,7 +36,7 @@
     position: absolute;
     top: 0;
     bottom: 0;
-    left: 20px; /* Posição da linha em telas pequenas */
+    left: 20px; 
     width: 4px;
     background: #ddd;
     border-radius: 2px;
@@ -46,13 +46,13 @@
   .timeline-item {
     position: relative;
     margin-bottom: 50px;
-    padding-left: 60px; /* Espaço para a bolinha */
+    padding-left: 60px; 
   }
 
   /* Bolinha do Marcador */
   .timeline-marker {
     position: absolute;
-    left: 12px; /* Ajuste para centralizar na linha */
+    left: 12px; 
     top: 0;
     width: 20px;
     height: 20px;
@@ -74,7 +74,7 @@
   }
 
   .timeline-content:hover {
-    transform: translateY(-5px); /* Efeito leve ao passar o mouse */
+    transform: translateY(-5px);
   }
 
   .timeline-date {
@@ -92,20 +92,20 @@
     margin-top: 0;
     margin-bottom: 10px;
     color: var(--primary-color);
-    font-size: 1.5rem;
+    font-size: 1.4rem;
   }
 
   .timeline-text {
-    font-size: 1rem;
+    font-size: 0.95rem;
     color: #555;
-    margin-bottom: 15px;
+    margin-bottom: 0;
     text-align: justify;
   }
 
   /* Estilo da Imagem */
   .timeline-img-wrapper {
     width: 100%;
-    height: 250px;
+    height: 200px; /* Altura um pouco menor para caber 10 itens bem */
     background-color: #eee;
     border-radius: 6px;
     overflow: hidden;
@@ -123,7 +123,7 @@
     object-fit: cover;
   }
 
-  /* Responsividade para Telas Maiores (Desktop) */
+  /* Responsividade Desktop */
   @media (min-width: 768px) {
     .timeline-container::before {
       left: 50%;
@@ -136,31 +136,27 @@
       margin-bottom: 60px;
     }
     
-    /* Itens ímpares à esquerda */
     .timeline-item:nth-child(odd) {
       left: 0;
       padding-right: 40px;
       text-align: right;
     }
 
-    /* Itens pares à direita */
     .timeline-item:nth-child(even) {
       left: 50%;
       padding-left: 40px;
       text-align: left;
     }
 
-    /* Ajuste do marcador no Desktop */
     .timeline-item:nth-child(odd) .timeline-marker {
       left: auto;
-      right: -14px; /* Centraliza na linha */
+      right: -14px;
     }
     
     .timeline-item:nth-child(even) .timeline-marker {
       left: -14px;
     }
 
-    /* Ajuste da borda colorida do card */
     .timeline-item:nth-child(odd) .timeline-content {
       border-left: none;
       border-right: 5px solid var(--accent-color);
@@ -175,55 +171,97 @@
   <div class="timeline-item">
     <div class="timeline-marker"></div>
     <div class="timeline-content">
-      <div class="timeline-date">1954</div>
-      <h3 class="timeline-title">A Chegada e a Cicatriz</h3>
-      <div class="timeline-img-wrapper">
-        <img src="https://placehold.co/600x400/555/fff?text=Foto+Estacao+1954" alt="Antiga Estação Ferroviária">
-      </div>
-      <p class="timeline-text">
-        A inauguração da nova Estação Ferroviária consolida Maringá como polo regional. O trem trouxe progresso, mas os trilhos em nível dividiram a cidade em "Maringá Velha" e "Vila Operária". Essa barreira física gerava acidentes e travava o trânsito, criando a "cicatriz urbana" que motivaria a obra.
-      </p>
-    </div>
-  </div>
-
-  <div class="timeline-item">
-    <div class="timeline-marker"></div>
-    <div class="timeline-content">
-      <div class="timeline-date">1985 - 1991</div>
-      <h3 class="timeline-title">O Projeto Água Vermelha</h3>
-      <div class="timeline-img-wrapper">
-        <img src="https://placehold.co/600x400/555/fff?text=Mapa+Projeto+Agua+Vermelha" alt="Mapa antigo do projeto">
-      </div>
-      <p class="timeline-text">
-        Com o crescimento urbano, a pressão para retirar os trilhos aumenta. Surgem os estudos do projeto "Água Vermelha". Em 1991, a discussão ganha força política e técnica, desenhando o que seria uma das maiores obras de engenharia urbana do interior do país para unificar a cidade.
-      </p>
-    </div>
-  </div>
-
-  <div class="timeline-item">
-    <div class="timeline-marker"></div>
-    <div class="timeline-content">
-      <div class="timeline-date">1996 - 2002</div>
-      <h3 class="timeline-title">A Grande Obra e o Túnel</h3>
-      <div class="timeline-img-wrapper">
-        <img src="https://placehold.co/600x400/555/fff?text=Obras+do+Rebaixamento" alt="Escavações no centro de Maringá">
-      </div>
-      <p class="timeline-text">
-        Inicia-se a complexa obra de rebaixamento (o "buracão"). Durante anos, o centro conviveu com grandes escavações para a construção do túnel ferroviário. Foi uma transformação visual drástica, preparando a laje superior para receber o futuro desenvolvimento imobiliário.
-      </p>
-    </div>
-  </div>
-
-  <div class="timeline-item">
-    <div class="timeline-marker"></div>
-    <div class="timeline-content">
       <div class="timeline-date">2006</div>
-      <h3 class="timeline-title">O Surgimento do Novo Centro</h3>
+      <h3 class="timeline-title">O Marco Zero: Abertura da Avenida</h3>
       <div class="timeline-img-wrapper">
-        <img src="https://placehold.co/600x400/555/fff?text=Inauguracao+Av+Horacio" alt="Avenida Horácio Raccanello vazia">
+        <img src="https://placehold.co/600x300/007bff/fff?text=2006+Av+Horacio+Vazia" alt="Inauguração Avenida Horácio Raccanello">
       </div>
       <p class="timeline-text">
-        Um marco: a inauguração da Avenida Horácio Raccanello Filho sobre o túnel. A antiga área degradada dá lugar a um vasto espaço planejado. Inicia-se a verticalização, com o lançamento de torres comerciais e residenciais que formariam o novo skyline da cidade.
+        A entrega oficial da Avenida Horácio Raccanello Filho marca o nascimento do "Novo Centro". Sobre a laje do túnel ferroviário, surge um imenso vazio urbano pavimentado, conectando as zonas Leste e Oeste e eliminando a barreira histórica que dividia a cidade, preparando o terreno para o futuro.
+      </p>
+    </div>
+  </div>
+
+  <div class="timeline-item">
+    <div class="timeline-marker"></div>
+    <div class="timeline-content">
+      <div class="timeline-date">2007</div>
+      <h3 class="timeline-title">O "Boom" Imobiliário</h3>
+      <div class="timeline-img-wrapper">
+        <img src="https://placehold.co/600x300/2c3e50/fff?text=2007+Terrenos+a+Venda" alt="Terrenos vazios e placas de venda">
+      </div>
+      <p class="timeline-text">
+        Com a infraestrutura pronta e as leis de zoneamento definidas, inicia-se uma corrida imobiliária. Construtoras adquirem os lotes ao longo da avenida. É o início do planejamento dos grandes edifícios, com a promessa de criar o metro quadrado mais valorizado e moderno do interior do Paraná.
+      </p>
+    </div>
+  </div>
+
+  <div class="timeline-item">
+    <div class="timeline-marker"></div>
+    <div class="timeline-content">
+      <div class="timeline-date">2009</div>
+      <h3 class="timeline-title">Verticalização Inicial</h3>
+      <div class="timeline-img-wrapper">
+        <img src="https://placehold.co/600x300/007bff/fff?text=2009+Obras+de+Edificios" alt="Canteiros de obras de prédios">
+      </div>
+      <p class="timeline-text">
+        Os primeiros "esqueletos" de concreto começam a subir. A paisagem horizontal da avenida muda rapidamente com gruas e canteiros de obras. Surgem os primeiros edifícios residenciais voltados para um público que desejava morar próximo a tudo, inaugurando o conceito de "bairro vertical".
+      </p>
+    </div>
+  </div>
+
+  <div class="timeline-item">
+    <div class="timeline-marker"></div>
+    <div class="timeline-content">
+      <div class="timeline-date">2011</div>
+      <h3 class="timeline-title">A Chegada do Comércio</h3>
+      <div class="timeline-img-wrapper">
+        <img src="https://placehold.co/600x300/2c3e50/fff?text=2011+Lojas+e+Servicos" alt="Fachadas de comércio no térreo">
+      </div>
+      <p class="timeline-text">
+        Com os primeiros moradores chegando, o térreo dos edifícios ganha vida. Farmácias, padarias e pequenas lojas ocupam as fachadas ativas. A região deixa de ser apenas um local de passagem rápida de carros para se tornar um destino de serviços, integrando-se ao Shopping Avenida Center.
+      </p>
+    </div>
+  </div>
+
+  <div class="timeline-item">
+    <div class="timeline-marker"></div>
+    <div class="timeline-content">
+      <div class="timeline-date">2014</div>
+      <h3 class="timeline-title">Planejamento da Mobilidade</h3>
+      <div class="timeline-img-wrapper">
+        <img src="https://placehold.co/600x300/007bff/fff?text=2014+Transito+e+Onibus" alt="Fluxo intenso na avenida">
+      </div>
+      <p class="timeline-text">
+        O aumento do fluxo exige novas soluções. A prefeitura intensifica estudos para corredores de ônibus e ciclovias. A Avenida Horácio Raccanello se consolida como uma artéria vital, exigindo que o Novo Centro não seja apenas prédio, mas um eixo de transporte coletivo eficiente.
+      </p>
+    </div>
+  </div>
+
+  <div class="timeline-item">
+    <div class="timeline-marker"></div>
+    <div class="timeline-content">
+      <div class="timeline-date">2016</div>
+      <h3 class="timeline-title">A Obra do Terminal</h3>
+      <div class="timeline-img-wrapper">
+        <img src="https://placehold.co/600x300/2c3e50/fff?text=2016+Construcao+Terminal" alt="Estrutura metálica do terminal">
+      </div>
+      <p class="timeline-text">
+        Inicia-se a construção do novo Terminal Intermodal Urbano. Uma estrutura moderna e arrojada começa a ser erguida ao lado do antigo terminal. A obra promete resolver o gargalo do transporte público e valorizar ainda mais os imóveis comerciais do entorno.
+      </p>
+    </div>
+  </div>
+
+  <div class="timeline-item">
+    <div class="timeline-marker"></div>
+    <div class="timeline-content">
+      <div class="timeline-date">2018</div>
+      <h3 class="timeline-title">Humanização do Espaço</h3>
+      <div class="timeline-img-wrapper">
+        <img src="https://placehold.co/600x300/007bff/fff?text=2018+Paisagismo" alt="Pedestres e calçadas">
+      </div>
+      <p class="timeline-text">
+        A densidade populacional traz a necessidade de espaços mais humanos. Melhorias nas calçadas, iluminação em LED e paisagismo nos canteiros centrais tentam suavizar a aridez do concreto. O Novo Centro começa a ser frequentado por pedestres e esportistas nos fins de semana.
       </p>
     </div>
   </div>
@@ -232,12 +270,40 @@
     <div class="timeline-marker"></div>
     <div class="timeline-content">
       <div class="timeline-date">2020</div>
-      <h3 class="timeline-title">A Consolidação e o Terminal</h3>
+      <h3 class="timeline-title">O Hub: Terminal Intermodal</h3>
       <div class="timeline-img-wrapper">
-        <img src="https://placehold.co/600x400/555/fff?text=Terminal+Intermodal+Atual" alt="Terminal Intermodal Moderno">
+        <img src="https://placehold.co/600x300/2c3e50/fff?text=2020+Inauguracao+Terminal" alt="Terminal Intermodal pronto">
       </div>
       <p class="timeline-text">
-        A entrega do Terminal Intermodal Urbano finaliza a ocupação do solo. A região se consolida não apenas como eixo imobiliário, mas como o coração da mobilidade urbana, integrando transporte e serviços onde antes passava apenas a locomotiva a vapor.
+        A inauguração do Terminal Intermodal consolida a região como o coração pulsante da cidade. A integração entre transporte metropolitano e urbano atrai milhares de pessoas diariamente, transformando o Novo Centro no local de maior circulação e visibilidade comercial de Maringá.
+      </p>
+    </div>
+  </div>
+
+  <div class="timeline-item">
+    <div class="timeline-marker"></div>
+    <div class="timeline-content">
+      <div class="timeline-date">2022</div>
+      <h3 class="timeline-title">Consolidação Corporativa</h3>
+      <div class="timeline-img-wrapper">
+        <img src="https://placehold.co/600x300/007bff/fff?text=2022+Predios+Espelhados" alt="Edifícios corporativos modernos">
+      </div>
+      <p class="timeline-text">
+        No pós-pandemia, a região se firma como polo corporativo. Grandes empresas, coworkings e clínicas de saúde ocupam as torres comerciais (como o *Le Monde* e outros). O perfil do bairro se torna misto: residencial à noite e um agitado centro de negócios durante o dia.
+      </p>
+    </div>
+  </div>
+
+  <div class="timeline-item">
+    <div class="timeline-marker"></div>
+    <div class="timeline-content">
+      <div class="timeline-date">2025</div>
+      <h3 class="timeline-title">Conexão com o Futuro</h3>
+      <div class="timeline-img-wrapper">
+        <img src="https://placehold.co/600x300/2c3e50/fff?text=2025+Eixo+Monumental" alt="Projeto Eixo Monumental">
+      </div>
+      <p class="timeline-text">
+        O Novo Centro atinge sua maturação e se prepara para a integração com o projeto do Eixo Monumental (Vila Olímpica e entorno). A área se estabelece definitivamente como o símbolo da Maringá moderna, unindo alta densidade, serviços de ponta e mobilidade urbana.
       </p>
     </div>
   </div>
